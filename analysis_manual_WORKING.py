@@ -129,7 +129,7 @@ for measurement in cincinnati:
     month=measurement["date"]
     if month not in rel_cincinnati:
         rel_cincinnati[month]=0
-    rel_cincinnati[month] += total_monthly_precipitation_cincinnati[month]/yr_cincinnati
+    rel_cincinnati[month] = total_monthly_precipitation_cincinnati[month]/yr_cincinnati
 # print(rel_cincinnati)
 
 rel_seattle={}
@@ -137,7 +137,7 @@ for measurement in seattle:
     month=measurement["date"]
     if month not in rel_seattle:
         rel_seattle[month]=0
-    rel_seattle[month] += total_monthly_precipitation_seattle[month]/yr_seattle
+    rel_seattle[month] = total_monthly_precipitation_seattle[month]/yr_seattle
 # print(rel_seattle)
 
 rel_maui={}
@@ -145,7 +145,7 @@ for measurement in maui:
     month=measurement["date"]
     if month not in rel_maui:
         rel_maui[month]=0
-    rel_maui[month] += total_monthly_precipitation_maui[month]/yr_maui
+    rel_maui[month] = total_monthly_precipitation_maui[month]/yr_maui
 # print(rel_maui)
 
 rel_sandiego={}
@@ -153,7 +153,7 @@ for measurement in sandiego:
     month=measurement["date"]
     if month not in rel_sandiego:
         rel_sandiego[month]=0
-    rel_sandiego[month] += total_monthly_precipitation_sandiego[month]/yr_sandiego
+    rel_sandiego[month] = total_monthly_precipitation_sandiego[month]/yr_sandiego
 # print(rel_sandiego)
 
 relative_monthly_precipitation_all={}
