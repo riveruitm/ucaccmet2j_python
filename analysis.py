@@ -120,6 +120,9 @@ for measurement in content:
             yr_all["San Diego"]=yr_sandiego
 
 print(yr_all)
+with open('ucaccmet2j_python/results.json', 'a', encoding='utf-8') as file:
+    json.dump(yr_all, file, indent=4, ensure_ascii=False)
+
 
 rel_cincinnati={}
 for measurement in cincinnati:
@@ -142,7 +145,7 @@ for measurement in maui:
     month=measurement["date"]
     if month not in rel_maui:
         rel_maui[month]=0
-    rel_seattle[month] += total_monthly_precipitation_maui[month]/yr_maui
+    rel_maui[month] += total_monthly_precipitation_maui[month]/yr_maui
 # print(rel_maui)
 
 rel_sandiego={}
@@ -160,4 +163,8 @@ relative_monthly_precipitation_all["Seattle"]=rel_seattle
 relative_monthly_precipitation_all["Maui"]=rel_maui
 relative_monthly_precipitation_all["Sandiego"]=rel_sandiego
 
-# print(relative_monthly_precipitation_all)
+print(relative_monthly_precipitation_all)
+
+with open('ucaccmet2j_python/results.json', 'a', encoding='utf-8') as file:
+    json.dump(relative_monthly_precipitation_all, file, indent=4, ensure_ascii=False)
+
