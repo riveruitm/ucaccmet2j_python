@@ -93,7 +93,7 @@ total_monthly_precipitation_all["Cincinnati"]=total_monthly_precipitation_cincin
 total_monthly_precipitation_all["Seattle"]=total_monthly_precipitation_seattle
 total_monthly_precipitation_all["Maui"]=total_monthly_precipitation_maui
 total_monthly_precipitation_all["San Diego"]=total_monthly_precipitation_sandiego
-print(total_monthly_precipitation_all)
+# print(total_monthly_precipitation_all)
 
 # into JSON
 with open('ucaccmet2j_python/results.json', 'w', encoding='utf-8') as file:
@@ -119,6 +119,7 @@ for measurement in content:
             yr_sandiego += measurement["value"] 
             yr_all["San Diego"]=yr_sandiego
 
+print(yr_all)
 
 rel_cincinnati={}
 for measurement in cincinnati:
@@ -159,4 +160,4 @@ relative_monthly_precipitation_all["Seattle"]=rel_seattle
 relative_monthly_precipitation_all["Maui"]=rel_maui
 relative_monthly_precipitation_all["Sandiego"]=rel_sandiego
 
-print(relative_monthly_precipitation_all)
+# print(relative_monthly_precipitation_all)
