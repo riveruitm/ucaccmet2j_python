@@ -1,5 +1,4 @@
 import json
-import pandas as pd
 
 seattle=[]
 cincinnati=[]
@@ -13,17 +12,20 @@ with open('ucaccmet2j_python/precipitation.json') as file:
         cleaner_date.pop(-1)
         measurement["date"]=cleaner_date
         for value in measurement["date"]:
-            value=int(value)
             measurement["date"]=value
-            if measurement["station"]=="GHCND:US1WAKG0038":
-                seattle.append(measurement)
-            if measurement["station"]=="GHCND:USW00093814":
-                cincinnati.append(measurement)
-            if measurement["station"]=="GHCND:USC00513317":
-                maui.append(measurement)
-            if measurement["station"]=="GHCND:US1WAKG0038":
-                sandiego.append(measurement)
-# print(seattle)
+        if measurement["station"]=="GHCND:US1WAKG0038":
+            measurement["station"]="Seattle"
+            seattle.append(measurement)
+        elif measurement["station"]=="GHCND:USW00093814":
+            measurement["station"]="Cincinnati"
+            cincinnati.append(measurement)
+        elif measurement["station"]=="GHCND:USC00513317":
+            measurement["station"]="Maui"
+            maui.append(measurement)
+        elif measurement["station"]=="GHCND:US1CASD0032":
+            measurement["station"]="Sandiego"
+            sandiego.append(measurement)      
+
 
 months=set()
 
